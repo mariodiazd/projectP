@@ -6,15 +6,13 @@
     "node": "16.x"
   },
   "scripts": {
-    "ng": "ng",
-    "start": "node server.js",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "lite": "lite-server",
-    "postinstall": "ng build --prod"
-  },
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
+    },
   "private": true,
   "dependencies": {
     "-": "^0.0.1",
@@ -41,6 +39,7 @@
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "save": "^2.4.0",
+    "serve": "^13.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
