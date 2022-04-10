@@ -1,6 +1,10 @@
 {
-  "name": "project-p",
-  "version": "0.0.0",
+  "name": "felicidades-paula",
+  "description": "a really cool app",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
