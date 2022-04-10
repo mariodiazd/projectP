@@ -1,0 +1,11 @@
+.foto {
+    width: 350px;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+
+.foto-container:hover {
+    border-radius: 10px;
+    border: 2px solid plum;
+}

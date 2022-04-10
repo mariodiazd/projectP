@@ -1,0 +1,36 @@
+<div class="background"> 
+    <div class="row text-center">
+        <div style="margin-top: 200px;" class="col-md-4 col-lg-4">
+            <fa-layers>
+                <fa-icon  style="color: plum;" size="7x" [icon]="circleIcon"></fa-icon>
+                <fa-icon transform=" right-10" [spin]="true" size="3x" [icon]="regaloIcon"></fa-icon>
+            </fa-layers>
+          
+        </div>
+        <div style="margin-top: 200px;" class="col-md-4 col-lg-4">
+            <fa-layers>
+                <fa-icon  style="color: plum;" size="7x" [icon]="circleIcon"></fa-icon>
+                <fa-icon transform=" right-10" [spin]="true" size="3x" [icon]="regaloIcon"></fa-icon>
+            </fa-layers></div>
+        <div style="margin-top: 200px;" class="col-md-4 col-lg-4">
+            <fa-layers>
+                <fa-icon  style="color: plum;" size="7x" [icon]="circleIcon"></fa-icon>
+                <fa-icon transform=" right-10" [spin]="true" size="3x" [icon]="regaloIcon"></fa-icon>
+            </fa-layers></div>
+        
+    </div>
+    <div class="row">
+        <div style="margin-top: 150px;" class="text-center">
+            <p style="font-size: medium;">La prueba consiste en que contestes unas pequeñas preguntas</p>
+            <p style="font-size: medium;">Cada pregunta suma puntos, y en función de los puntos que consigas podrás conseguir más regalos</p>
+            <h2>¿Te atreves?</h2>
+
+            <i class="fa-fa-gift"></i>
+            
+
+            <button (click)="goToPregunta1()"  style="margin-top: 20px;" routerLink="/concurso"  class="btn">COMENZAR CONCURSO</button>
+        </div>
+    </div>
+
+
+<router-outlet></router-outlet>

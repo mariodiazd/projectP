@@ -1,0 +1,58 @@
+<div class="background">
+    <div style="background-color: transparent; height: 100px;"></div>
+    <div class="text-center">
+        <p>Para que no sea muy dificil nada mas empezar... Por valor de <strong>1 punto por fecha acertada</strong> </p>
+        <h2>¿Cual es la fecha de nacimiento de estas tres criaturas?</h2>
+        
+    </div>
+   
+
+    <div style="margin-top: 100px;" class="row">
+        <div class="col-md-4 col-lg-4 text-center">
+            <div>
+                <img src="../../../assets/img/carlotis.png">
+            </div>
+            <div>
+                <input [(ngModel)]="fechaCarlotaRespuesta" class="mt-5" style="border-radius: 5px; border: 1px solid plum; padding: 10px; width: 350px;" type="date">
+            </div>
+            <div *ngIf="showErrorCarlota" style="color:red; margin-top: 10px;"> <label class="text-error">¡Has fallado la fecha de nacimiento de tu hermana... Ya te vale!</label></div>
+           
+        </div>
+        <div class="col-md-4 col-lg-4 text-center">
+            <div>
+                <img src="../../../assets/img/ayron.png">
+            </div>
+            <div>
+                <input [(ngModel)]="fechaAyronRespuesta" class="mt-5" style="border-radius: 5px; border: 1px solid plum; padding: 10px; width: 350px;" type="date">
+            </div>
+            <div *ngIf="showErrorAyron" style="color:red; margin-top: 10px;"> <label class="text-error">¡Has fallado la fecha de nacimiento del mejor perro... Ya te vale!</label></div>
+           
+        </div>
+        <div class="col-md-4 col-lg-4 text-center">
+            <div>
+                <img src="../../../assets/img/mario.png">
+            </div>
+            <div>
+                <input [(ngModel)]="fechaMarioRespuesta"  class="mt-5" style="border-radius: 5px; border: 1px solid plum; padding: 10px; width: 350px;" type="date">
+            </div>
+            <div *ngIf="showErrorMario" style="color:red; margin-top: 10px;"> <label class="text-error">¡Has fallado la fecha de nacimiento de tu novio... Ya te vale!</label></div>
+           
+        </div>
+        <div class="col-md-4 col-lg-4"></div>
+        <div class="col-md-4 col-lg-4"></div>
+    </div>
+    <div style="margin-top: 100px;" class="text-center">
+        <button *ngIf="!comprobado" (click)="comprobarRespuestas()" style="width: 400px; height: 60px;" class="btn">COMPROBAR</button>
+        <button class="btn-siguiente" *ngIf="comprobado" (click)="siguientePregunta()" style="width: 80px; height: 60px;">  <fa-icon  style="color: plum; margin-left: 5px;" size="2x" [icon]="flechaIcon"></fa-icon></button>
+      
+    </div>
+    <div style="margin-top: 60px;" class="text-center">
+        <div>
+            <button style="width: 100px; height: 100px; border-radius: 50%; font-weight: bolder; font-size: 30px;" class="btn">{{puntos}}</button>
+        </div>
+       
+        <label style="font-size: medium; font-weight: bolder;">Tus puntos</label>
+      
+    </div>
+    </div>
+    <router-outlet></router-outlet>

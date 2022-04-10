@@ -1,0 +1,47 @@
+<div class="background">
+    <div style="background-color: transparent; height: 50px;"></div>
+    <div class="text-center">
+        <p>Vamos a complicarlo un poco, y quiero que refresques la memoria. Por esta ganarás <strong>3 puntazos</strong></p>
+        <p>Todavía nos quedan muchos momentos... pero ahora:</p>
+        <h1>ORDENA POR ORDEN CRONOLÓGICO ESTOS MOMENTOS</h1>
+        
+    </div>
+   
+
+    <div  style="margin-top: 60px;" class="row">
+        <div class="row text-center">
+            <label>Escribe aquí tu respuesta (Sólo los números)</label>
+            <div class="text-center">
+               
+                <input [(ngModel)]="respuesta" style="width: 100px; border-radius: 5px; border: 1px solid plum;" type="text">
+            </div>
+           
+        </div>
+        <div  *ngFor="let photo of photos" class="col-md-3 col-lg-3 text-center">
+            <label style="font-size: large; font-weight: bolder; background-color: black; border-radius: 5px; width: 50px;">{{photo.id}}</label>
+            <label [style.background]="color" *ngIf="showOrder" style="font-size: large; font-weight: bolder; border-radius: 5px; width: 50px; margin-left: 2px;">{{photo.order}}</label>
+            <div style="width: 50px; background-color: black;">
+               
+            </div>
+            <img class="foto" [src]="photo.src">
+        </div>
+    </div>
+    <div style="margin-top: 60px;" class="text-center">
+        <div>
+            <label style="color: green;" *ngIf="showCorrecto"> ¡Correcto! Anda que te lo estoy poniendo difícil!</label>
+            <label style="color: red;" *ngIf="showIncorrecto"> ¡No puedo creer que hayas fallado esto!</label>
+        </div>
+        <button *ngIf="!comprobado" (click)="comprobarRespuestas('')" style="width: 400px; height: 60px;" class="btn">COMPROBAR</button>
+        <button class="btn-siguiente" *ngIf="comprobado" (click)="siguientePregunta()" style="width: 80px; height: 60px;">  <fa-icon  style="color: plum; margin-left: 5px;" size="2x" [icon]="flechaIcon"></fa-icon></button>
+      
+    </div>
+    <div style="margin-top: 60px;" class="text-center">
+        <div>
+            <button style="width: 100px; height: 100px; border-radius: 50%; font-weight: bolder; font-size: 30px;" class="btn">{{puntos}}</button>
+        </div>
+       
+        <label style="font-size: medium; font-weight: bolder;">Tus puntos</label>
+      
+    </div>
+    </div>
+    <router-outlet></router-outlet>

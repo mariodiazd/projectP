@@ -1,0 +1,43 @@
+<div class="background">
+    <div style="background-color: transparent; height: 100px;"></div>
+    <div class="text-center">
+        <p>Ya solo te quedan 2, así que seguimos subiendo el nivel <strong>2 punto de valor</strong></p>
+        <p>En esta seguro que consigo ponerte en dudas, de hecho yo mismo estoy dudando...</p>
+        <h1>¿Cuál es mi pelicula preferida?</h1>
+        
+    </div>
+   
+
+    <div style="margin-top: 220px;" class="row">
+        <div class="col-md-4 col-lg-4 text-center">
+            <button id="correcto"  [disabled]="comprobado" (click)="comprobarRespuestas('1')"  style="width: 400px; height: 60px;" class="btn">GLADIATOR</button>
+        </div>
+        <div class="col-md-4 col-lg-4 text-center">
+            <button  [disabled]="comprobado" (click)="comprobarRespuestas('2')" style="width: 400px; height: 60px;" class="btn">HARRY POTTER</button>
+        </div>
+        <div class="col-md-4 col-lg-4 text-center">
+           
+            <button [disabled]="comprobado"  (click)="comprobarRespuestas('3')" style="width: 400px; height: 60px;" class="btn">VENGDORES</button>
+        </div>
+        <div class="col-md-4 col-lg-4"></div>
+        <div class="col-md-4 col-lg-4"></div>
+    </div>
+    <div style="margin-top: 100px;" class="text-center">
+        <div>
+            <label style="color: white; background-color: green; border-radius: 5px;" *ngIf="showCorrecto"> ¡Correcto! Anda que te lo estoy poniendo difícil!</label>
+            <label style="color: white; background-color: red; border-radius: 5px;" *ngIf="showIncorrecto"> ¡No puedo creer que hayas fallado esto!</label>
+        </div>
+      
+        <button class="btn-siguiente" *ngIf="comprobado" (click)="siguientePregunta()" style="width: 80px; height: 60px;">  <fa-icon  style="color: plum; margin-left: 5px;" size="2x" [icon]="flechaIcon"></fa-icon></button>
+      
+    </div>
+    <div style="margin-top: 60px;" class="text-center">
+        <div>
+            <button style="width: 100px; height: 100px; border-radius: 50%; font-weight: bolder; font-size: 30px;" class="btn">{{puntos}}</button>
+        </div>
+       
+        <label style="font-size: medium; font-weight: bolder;">Tus puntos</label>
+      
+    </div>
+    </div>
+    <router-outlet></router-outlet>

@@ -1,0 +1,85 @@
+<div class="background">
+    <ng-template #mymodalWPT let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">¡Este es tu regalo!</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+              <label>Prometíamos que volvíamos, asi que aquí tienes tus entradas!</label>
+              <img style="width: 400px;" src="https://www.worldpadeltour.com/media-content/2022/03/wpt-mastervalladolid2022-vf_1900x1086-1170x669.jpeg">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="descargarEntradas()">DESCARGAR</button>
+        </div>
+      </ng-template>
+      <ng-template #mymodalCena let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">¡Este es tu regalo!</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+              <label>¡Se que estas cansada pero seguro que puedes con esto! </label>
+              <img style="width: 400px;" src="https://console.listae.com/files/2017/06/madame_sushita.jpg">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cenita a las 21:30</button>
+        </div>
+      </ng-template>
+    <div style="background-color: transparent; height: 100px;"></div>
+    <div class="text-center">
+        <p>Has llegado al final y si tienes los puntos suficientes</p>
+        <h1>¡Podrás abrir tus regalos!</h1>
+        
+    </div>
+   
+
+    <div style="margin-top: 220px;" class="row">
+        <div class="col-md-6 col-lg-6 text-center">
+            <div>
+                <button  [disabled]="comprobado" (click)="openCena(mymodalCena)"  style="width: 400px; height: 200px;" class="btn"> <fa-icon  style="color: white; margin-left: 5px;" size="5x" [icon]="regaloIcon"></fa-icon></button>
+            </div>
+            <div class="text-center mt-5">
+                <label style="font-size: larger; font-weight: bolder;">5 puntos</label>
+            </div>
+          
+        </div>
+        <div class="col-md-6 col-lg-6 text-center">
+            <div>
+                <button  [disabled]="comprobado" (click)="openWPT(mymodalWPT)"  style="width: 400px; height: 200px;" class="btn"> <fa-icon  style="color: white; margin-left: 5px;" size="5x" [icon]="regaloIcon"></fa-icon></button>
+            </div>
+            <div class="text-center mt-5">
+                <label style="font-size: larger; font-weight: bolder;">10 puntos</label>
+            </div>
+          
+        </div>
+
+        <div class="col-md-4 col-lg-4"></div>
+        <div class="col-md-4 col-lg-4"></div>
+    </div>
+    <div style="margin-top: 100px;" class="text-center">
+        <div>
+            <label style="color: white; background-color: green; border-radius: 5px;" *ngIf="showCorrecto"> ¡Correcto! Anda que te lo estoy poniendo difícil!</label>
+            <label style="color: white; background-color: red; border-radius: 5px;" *ngIf="showIncorrecto"> ¡No puedo creer que hayas fallado esto!</label>
+        </div>
+      
+        <button class="btn-siguiente" *ngIf="comprobado" (click)="siguientePregunta()" style="width: 80px; height: 60px;">  <fa-icon  style="color: plum; margin-left: 5px;" size="2x" [icon]="flechaIcon"></fa-icon></button>
+      
+    </div>
+    <div style="margin-top: 60px;" class="text-center">
+        <div>
+            <button style="width: 100px; height: 100px; border-radius: 50%; font-weight: bolder; font-size: 30px;" class="btn">{{puntos}}</button>
+        </div>
+       
+        <label style="font-size: medium; font-weight: bolder;">Tus puntos</label>
+      
+    </div>
+    </div>
+    <router-outlet></router-outlet>

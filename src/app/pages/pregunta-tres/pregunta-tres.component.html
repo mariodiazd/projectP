@@ -1,0 +1,43 @@
+<div class="background">
+    <div style="background-color: transparent; height: 100px;"></div>
+    <div class="text-center">
+        <p>Esto está siendo muy fácil, probemos de verdad si has estudiado algo a lo largo de estos 6 años</p>
+        <p>Espero que tus técnicas de test te ayuden Y MUCHO <strong>2 puntos de valor</strong></p>
+        <h1>¿Cuál de las siguientes afirmaciones es correcta con respecto a la reanimación cardiorrespiratoria?</h1>
+        
+    </div>
+   
+
+    <div  style="margin-top: 220px; margin-left: 10px;" class="row">
+        <div id="correcto" (click)="comprobarRespuestas('1')" style="background-color: black; border-radius: 10px; margin-left: 20px;" class="container col-md-3 col-lg-3 pregunta">
+            <p class="box1 " style="margin-left: 10px; margin-top: 10px;"> Tras comprobar la ausencia de pulso, la reanimación cardiopulmonar debe realizarse siguiendo la pauta de 30 compresiones torácicas y 2 insuflaciones pulmonares.</p>
+        </div>
+       
+        <div id="inc1" (click)="comprobarRespuestas('2')" style="background-color: black; border-radius: 10px;" class="container col-md-3 col-lg-3 pregunta">
+            <p class="box1 " style="margin-left: 10px;  margin-top: 10px;"> En cuanto se disponga de los medios necesarios se debe realizar una cardioversión si el paciente aún no ha recuperado el pulso.</p>
+        </div>
+        <div id="inc2" (click)="comprobarRespuestas('3')" style="background-color: black; border-radius: 10px;" class="container col-md-3 col-lg-3 pregunta">
+            <p class="box1 " style="margin-left: 10px;  margin-top: 10px;">La adrenalina, a dosis de 1mg cada 3 minutos, no se administrará si el mecanismo parada es una fibrilación ventricular.</p>
+        </div>
+        <div class="col-md-4 col-lg-4"></div>
+        <div class="col-md-4 col-lg-4"></div>
+    </div>
+    <div style="margin-top: 100px;" class="text-center">
+        <div>
+            <label style="color: green;" *ngIf="showCorrecto"> ¡Correcto! Anda que te lo estoy poniendo difícil!</label>
+            <label style="color: red;" *ngIf="showIncorrecto"> ¡No puedo creer que hayas fallado esto!</label>
+        </div>
+      
+        <button class="btn-siguiente" *ngIf="comprobado" (click)="siguientePregunta()" style="width: 80px; height: 60px;">  <fa-icon  style="color: plum; margin-left: 5px;" size="2x" [icon]="flechaIcon"></fa-icon></button>
+      
+    </div>
+    <div style="margin-top: 60px;" class="text-center">
+        <div>
+            <button style="width: 100px; height: 100px; border-radius: 50%; font-weight: bolder; font-size: 30px;" class="btn">{{puntos}}</button>
+        </div>
+       
+        <label style="font-size: medium; font-weight: bolder;">Tus puntos</label>
+      
+    </div>
+    </div>
+    <router-outlet></router-outlet>
