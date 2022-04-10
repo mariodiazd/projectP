@@ -11,6 +11,10 @@
     "lite": "lite-server",
     "heroku-postbuild": "ng build — prod"
   },
+  "engines": { 
+    "node": "16.14.2",
+    "npm": "8.5.0"
+   },
   "private": true,
   "dependencies": {
     "-": "^0.0.1",
